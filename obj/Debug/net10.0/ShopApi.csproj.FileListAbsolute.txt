@@ -129,3 +129,4 @@ D:\project\ShopApi\obj\Debug\net10.0\refint\ShopApi.dll
 D:\project\ShopApi\obj\Debug\net10.0\ShopApi.pdb
 D:\project\ShopApi\obj\Debug\net10.0\ShopApi.genruntimeconfig.cache
 D:\project\ShopApi\obj\Debug\net10.0\ref\ShopApi.dll
+D:\project\ShopApi\obj\Debug\net10.0\ShopApi.sourcelink.json

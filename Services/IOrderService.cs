@@ -4,5 +4,5 @@ namespace ShopApi.Services;
 
 public interface IOrderService
 {
-  Task<IEnumerable<Order>> GetUserOrders(int userId);
+  Task<IEnumerable<Order>?> GetUserOrders(int userId);
 }

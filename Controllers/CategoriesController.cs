@@ -33,7 +33,7 @@ public class CategoriesController : ControllerBase
     {
       return NotFound(new
       {
-        message = "چنین دسته‌بندی‌ای وجود ندارد."
+        message = "There is no Category."
       });
     }
 

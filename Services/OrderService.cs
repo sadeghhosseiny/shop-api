@@ -13,8 +13,16 @@ public class OrderService : IOrderService
     _context = context;
   }
 
-  public async Task<IEnumerable<Order>> GetUserOrders(int userId)
+  public async Task<IEnumerable<Order>?> GetUserOrders(int userId)
   {
+    var userExists = await _context.Users
+        .AnyAsync(u => u.Id == userId);
+
+    if (!userExists)
+    {
+      return null;
+    }
+
     var orders = await _context.Orders
         .Where(o => o.UserId == userId)
         .ToListAsync();

@@ -16,10 +16,19 @@ public class OrderController : ControllerBase
   }
 
   // GET: api/order/id
-  [HttpGet("{id}")]
+  [HttpGet("{userId}")]
   public async Task<ActionResult<IEnumerable<Order>>> GetOrder(int userId)
   {
     var orders = await _orderService.GetUserOrders(userId);
+
+    if (orders == null)
+    {
+      return NotFound(new
+      {
+        message = "User not found."
+      });
+    }
+
     return Ok(orders);
   }
 }
