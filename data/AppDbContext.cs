@@ -33,5 +33,17 @@ public class AppDbContext : DbContext
     modelBuilder.Entity<OrderItem>()
         .Property(oi => oi.UnitPrice)
         .HasColumnType("decimal(18,2)");
+
+    modelBuilder.Entity<Product>()
+        .HasOne(p => p.Category)
+        .WithMany(c => c.Products)
+        .HasForeignKey(p => p.CategoryId)
+        .OnDelete(DeleteBehavior.Restrict);
+
+    modelBuilder.Entity<OrderItem>()
+        .HasOne(oi => oi.Product)
+        .WithMany(p => p.OrderItems)
+        .HasForeignKey(oi => oi.ProductId)
+        .OnDelete(DeleteBehavior.Restrict);
   }
 }

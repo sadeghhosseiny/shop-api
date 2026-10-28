@@ -1,3 +1,6 @@
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+
 namespace ShopApi.Models;
 
 public class Order
@@ -8,6 +11,9 @@ public class Order
   public decimal TotalPrice { get; set; }
 
   public int UserId { get; set; }
+
+  [JsonIgnore]
+  [ValidateNever]
   public User User { get; set; } = null!;
 
   public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();

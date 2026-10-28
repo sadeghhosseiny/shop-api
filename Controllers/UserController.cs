@@ -31,4 +31,17 @@ public class UsersController : ControllerBase
 
     return Ok(user);
   }
+
+  // GET: api/user/{id}
+  [HttpGet("{id}")]
+  public async Task<ActionResult<User>> GetUserById(int id)
+  {
+    var user = await _userService.GetUserByIdAsync(id);
+    if (user == null)
+    {
+      return NotFound();
+    }
+    
+    return Ok(user);
+  }
 }
