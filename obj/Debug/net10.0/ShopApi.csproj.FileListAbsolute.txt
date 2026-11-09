@@ -263,3 +263,4 @@ C:\projects\shop-api\obj\Debug\net10.0\ShopApi.pdb
 C:\projects\shop-api\obj\Debug\net10.0\ShopApi.genruntimeconfig.cache
 C:\projects\shop-api\obj\Debug\net10.0\ref\ShopApi.dll
 C:\projects\shop-api\bin\Debug\net10.0\dotnet-tools.json
+D:\project\ShopApi\bin\Debug\net10.0\dotnet-tools.json

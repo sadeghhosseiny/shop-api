@@ -31,4 +31,24 @@ public class OrderController : ControllerBase
 
     return Ok(orders);
   }
+
+  // POST: api/order
+  [HttpPost]
+  public async Task<ActionResult<Order>> AddOrder([FromBody] Order order)
+  {
+    var newOrder = await _orderService.AddOrderAsync(order);
+    return CreatedAtAction(nameof(GetOrder), new { userId = newOrder.UserId }, newOrder);
+  }
+
+  // GET: api/order/id
+  [HttpDelete("{orderId}")]
+  public async Task<ActionResult<Order?>> DeleteOrder(int orderId)
+  {
+    var order = await _orderService.DeleteOrderAsync(orderId);
+
+    if (order == null)
+      return NotFound(new { message = "Order not found." });
+
+    return Ok(order);
+  }
 }

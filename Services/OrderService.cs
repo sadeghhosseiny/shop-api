@@ -29,4 +29,26 @@ public class OrderService : IOrderService
 
     return orders;
   }
+
+  public async Task<Order> AddOrderAsync(Order order)
+  {
+    await _context.Orders.AddAsync(order);
+    await _context.SaveChangesAsync();
+    return order;
+  }
+
+  public async Task<Order?> DeleteOrderAsync(int orderId)
+  {
+    var order = await _context.Orders
+     .FirstOrDefaultAsync(o => o.Id == orderId);
+
+    if (order == null)
+      return null;
+
+    _context.Orders.Remove(order);
+
+    await _context.SaveChangesAsync();
+
+    return order;
+  }
 }
