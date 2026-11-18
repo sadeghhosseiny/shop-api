@@ -51,4 +51,19 @@ public class OrderController : ControllerBase
 
     return Ok(order);
   }
+
+  // api/order/{orderId}/orderItem
+  [HttpPost("{orderId}/orderItem")]
+    public async Task<ActionResult<OrderItem>> AddOrderItem(int orderId, [FromBody] OrderItem item)
+    {
+        try
+        {
+          var createdItem = await _orderService.AddOrderItemToOrderAsync(orderId, item);
+          return Ok(createdItem); 
+        }
+        catch (KeyNotFoundException)
+        {
+          return NotFound($"Order with ID {orderId} not found.");
+        }
+    }
 }

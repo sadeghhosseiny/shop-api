@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\project\\ShopApi\\ShopApi.csproj": {}
+    "C:\\projects\\shop-api\\ShopApi.csproj": {}
   },
   "projects": {
-    "D:\\project\\ShopApi\\ShopApi.csproj": {
+    "C:\\projects\\shop-api\\ShopApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\project\\ShopApi\\ShopApi.csproj",
+        "projectUniqueName": "C:\\projects\\shop-api\\ShopApi.csproj",
         "projectName": "ShopApi",
-        "projectPath": "D:\\project\\ShopApi\\ShopApi.csproj",
-        "packagesPath": "C:\\Users\\acer\\.nuget\\packages\\",
-        "outputPath": "D:\\project\\ShopApi\\obj\\",
+        "projectPath": "C:\\projects\\shop-api\\ShopApi.csproj",
+        "packagesPath": "C:\\Users\\ss.hosseini\\.nuget\\packages\\",
+        "outputPath": "C:\\projects\\shop-api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\acer\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ss.hosseini\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net10.0"
@@ -84,7 +84,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.401/PortableRuntimeIdentifierGraph.json",
+          "runtimeIdentifierGraphPath": "C:\\Users\\ss.hosseini\\dotnet_sdk\\sdk\\10.0.403/PortableRuntimeIdentifierGraph.json",
           "packagesToPrune": {
             "Microsoft.AspNetCore": "(,10.0.32767]",
             "Microsoft.AspNetCore.Antiforgery": "(,10.0.32767]",

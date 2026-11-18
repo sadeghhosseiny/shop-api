@@ -51,4 +51,21 @@ public class OrderService : IOrderService
 
     return order;
   }
+
+  public async Task<OrderItem> AddOrderItemToOrderAsync(int orderId, OrderItem item)
+  {
+    var order = await _context.Orders.FirstOrDefaultAsync(o => o.Id == orderId);
+    if (order == null)
+    {
+        throw new KeyNotFoundException($"Order with ID {orderId} was not found.");
+    }
+
+    item.OrderId = orderId;
+
+    await _context.OrderItems.AddAsync(item);
+
+    await _context.SaveChangesAsync();
+
+    return item;
+  }
 }
