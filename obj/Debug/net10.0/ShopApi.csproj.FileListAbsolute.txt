@@ -140,8 +140,6 @@ C:\projects\shop-api\bin\Debug\net10.0\ShopApi.dll
 C:\projects\shop-api\bin\Debug\net10.0\ShopApi.pdb
 C:\projects\shop-api\bin\Debug\net10.0\Humanizer.dll
 C:\projects\shop-api\bin\Debug\net10.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-C:\projects\shop-api\bin\Debug\net10.0\Microsoft.AspNetCore.OpenApi.dll
-C:\projects\shop-api\bin\Debug\net10.0\Microsoft.Bcl.Cryptography.dll
 C:\projects\shop-api\bin\Debug\net10.0\Microsoft.Build.Framework.dll
 C:\projects\shop-api\bin\Debug\net10.0\Microsoft.CodeAnalysis.dll
 C:\projects\shop-api\bin\Debug\net10.0\Microsoft.CodeAnalysis.CSharp.dll
@@ -264,3 +262,6 @@ C:\projects\shop-api\obj\Debug\net10.0\ShopApi.genruntimeconfig.cache
 C:\projects\shop-api\obj\Debug\net10.0\ref\ShopApi.dll
 C:\projects\shop-api\bin\Debug\net10.0\dotnet-tools.json
 D:\project\ShopApi\bin\Debug\net10.0\dotnet-tools.json
+C:\projects\shop-api\bin\Debug\net10.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\projects\shop-api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\projects\shop-api\bin\Debug\net10.0\Swashbuckle.AspNetCore.SwaggerUI.dll

@@ -1,9 +1,11 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ShopApi.Models;
 using ShopApi.Services;
 
 namespace ShopApi.Controllers;
 
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
 public class OrderController : ControllerBase
@@ -40,7 +42,7 @@ public class OrderController : ControllerBase
     return CreatedAtAction(nameof(GetOrder), new { userId = newOrder.UserId }, newOrder);
   }
 
-  // GET: api/order/id
+  // DELETE: api/order/id
   [HttpDelete("{orderId}")]
   public async Task<ActionResult<Order?>> DeleteOrder(int orderId)
   {
@@ -54,16 +56,16 @@ public class OrderController : ControllerBase
 
   // api/order/{orderId}/orderItem
   [HttpPost("{orderId}/orderItem")]
-    public async Task<ActionResult<OrderItem>> AddOrderItem(int orderId, [FromBody] OrderItem item)
+  public async Task<ActionResult<OrderItem>> AddOrderItem(int orderId, [FromBody] OrderItem item)
+  {
+    try
     {
-        try
-        {
-          var createdItem = await _orderService.AddOrderItemToOrderAsync(orderId, item);
-          return Ok(createdItem); 
-        }
-        catch (KeyNotFoundException)
-        {
-          return NotFound($"Order with ID {orderId} not found.");
-        }
+      var createdItem = await _orderService.AddOrderItemToOrderAsync(orderId, item);
+      return Ok(createdItem);
     }
+    catch (KeyNotFoundException)
+    {
+      return NotFound($"Order with ID {orderId} not found.");
+    }
+  }
 }
